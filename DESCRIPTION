@@ -5,7 +5,7 @@ Authors@R:
     person("Elina", "Salmela", middle = NULL, "elina.salmela@iki.fi", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0003-1326-4462"))
 Description: Compare uniparental haplogroup data sampled from two or more populations to see if their haplogroup frequencies differ more than expected by chance given the sample sizes. One population is taken as reference and downsampled to the size of the other population(s) repeatedly; this empirical distribution is then compared to the observed haplogroup frequencies in the other population(s). In addition to evaluating the nominal significance, histograms of the empirical and observed distributions are plotted.
-License: `use_gpl3_license()`
+License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
