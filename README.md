@@ -10,69 +10,42 @@ Population discontinuity may be difficult to detect from genetic data, but the m
 
 The program takes as input data a table of absolute haplogroup frequencies. The table should have a header row with names of populations (these will be used as PDF plot names), and names of haplogroups should be in the first column (these will be used as labels on the PDF plot(s)). The second column should contain haplogroup counts from the reference population that all the other populations, i.e., the remaining columns will be compared to. (NB. The table should contain no summary row; the commands will calculate the total numbers of observations per population internally.)
 
-See example.txt for an example of an input file with 14 haplogroups (haplotypes), one reference population (called REF_TG5) and four populations to test (TG1-TG4).
-
+See example.txt for an example of an input file with 14 haplogroups [haplotypes], one reference population (called REF_TG5) and four populations to test (TG1-TG4). The dataset originates from Heino et al. 2022.
 
 ## How to run
 
-
+Download the R package (or copy-paste the code of the four functions into your R). You can use the input file example.txt to test how to run the program:
+```
 data <- read.table("example.txt", as.is=T, header=T, sep="\t")
+# read in the example data
 
-test.continuity(data2)
+test.continuity(data)
+# or test.continuity(data, perms=10000, signf=0.05) if you want to change the main parameters easily later
+```
 
-
+Running these two commands should create and save into the active working directory four PDF plots, reproducing the result from Figure 4 in Heino et al. 2022.
 
 
 ## Other stuff
 
-Jukka Palon idea
 no multiple testing correction
 zerofreq on purkkaus
 
 
-## Getting Started
 
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
-
-### Executing program
-
-* How to run the program
-* Step-by-step bullets
 ```
 code blocks for commands
 ```
 
 ## How to cite
 
+R package ContiUnity v.1.x (github.com/esalmela/ContiUnity; Översti et al. 2019)
 
-## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
-
-## Authors
-
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
 
 ## Version History
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
+* 1.0
     * Initial Release
 
 ## License
@@ -81,9 +54,10 @@ This project is licensed under the GPL v3 License.
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
-* [awesome-readme](https://github.com/matiassingers/awesome-readme)
-* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
-* [dbader](https://github.com/dbader/readme-template)
-* [zenorocha](https://gist.github.com/zenorocha/4526327)
-* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
+The original idea for this sampling approach was suggested by Dr. Jukka Palo in ca. 2017.
+
+## References
+
+Matti T. Heino, Tommi Nyman, Jukka U. Palo, Jenni Harmoinen, Mia Valtonen, Małgorzata Pilot, Sanni Översti, Elina Salmela, Mervi Kunnasranta, A. Rus Hoelzel, Minna Ruokonen, Jouni Aspi. Museum specimens of a landlocked pinniped reveal recent loss of genetic diversity and unexpected population connections. bioRxiv 2022.05.19.492422; doi: https://doi.org/10.1101/2022.05.19.492422 
+
+Översti S, Majander K, Salmela E, Salo K, Arppe L, Belskiy S, Etu-Sihvola H, Laakso V, Mikkola E, Pfrengle S, Putkonen M, Taavitsainen JP, Vuoristo K, Wessman A, Sajantila A, Oinonen M, Haak W, Schuenemann VJ, Krause J, Palo JU, Onkamo P. Human mitochondrial DNA lineages in Iron-Age Fennoscandia suggest incipient admixture and eastern introduction of farming-related maternal ancestry. Sci Rep. 2019; 9(1):16883. doi: 10.1038/s41598-019-51045-8.
