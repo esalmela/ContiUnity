@@ -18,7 +18,7 @@ See example.txt for an example of an input file with 14 haplogroups (haplotypes)
 
 data <- read.table("example.txt", as.is=T, header=T, sep="\t")
 
-test.continuity(data2, )
+test.continuity(data2)
 
 
 
